@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69", "wheel", "Cython>=3.0", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qtrees"
+version = "0.0.1"
+description = "Quantile-loss decision tree prototype"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "scikit-learn"]
+
+[tool.setuptools]
+packages = ["qtrees", "qtrees.tree", "qtrees.utils"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"qtrees.tree" = ["*.pxd", "*.pyx"]
+"qtrees.utils" = ["*.pxd", "*.pyx"]
